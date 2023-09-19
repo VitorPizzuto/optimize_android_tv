@@ -13,7 +13,7 @@ _Script 100% compatível com o [Termux](https://f-droid.org/en/packages/com.term
 ## Instalar
 
 ```
-curl -s https://raw.githubusercontent.com/talesam/optimize_android_tv/master/ott -o ott; chmod +x ott; ./ott
+curl -s https://raw.githubusercontent.com/VitorPizzuto/optimize_android_tv/master/ott -o ott; chmod +x ott; ./ott
 ```
 
 ## Executar
