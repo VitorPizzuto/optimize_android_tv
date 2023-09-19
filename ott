@@ -41,7 +41,7 @@ STD='\e[m'			# Fechamento de cor
 # Versão do script
 VER="0.5.53"
 
-VER_ON="$(curl -s https://raw.githubusercontent.com/talesam/optimize_android_tv/master/ott | grep -m1 VER=\" | sed 's|VER="||g;s|"||g')"
+VER_ON="$(curl -s https://raw.githubusercontent.com/VitorPizzuto/optimize_android_tv/master/ott | grep -m1 VER=\" | sed 's|VER="||g;s|"||g')"
 
 versao(){
 	clear
@@ -50,7 +50,7 @@ versao(){
 		echo ""
 		echo -e " ${BLU}*${STD} ${NEG}Nova versão:${STD}${YEL} v$VER${STD}"
 		echo -e " ${BLU}*${STD}Atualizando o script, aguarde...${STD}" && sleep 1
-		curl -s https://raw.githubusercontent.com/talesam/optimize_android_tv/master/ott -o new_ott
+		curl -s https://raw.githubusercontent.com/VitorPizzuto/optimize_android_tv/master/ott -o new_ott
 			if [ "$?" -eq "0" ]; then
 				echo ""
 				echo -e " ${GRE}*${STD} ${NEG}Atualizado com sucesso!" && sleep 1
@@ -236,7 +236,7 @@ rm_apps(){
 
 		# Baixar lista lixo dos apps
 		echo -e " ${BLU}*${STD} ${NEG}Aguarde, baixando lista negra de apps...${STD}" && sleep 2
-		wget https://raw.githubusercontent.com/talesam/optimize_android_tv/master/list_apps/rm_apps.list >/dev/null 2>&1 && clear
+		wget https://raw.githubusercontent.com/VitorPizzuto/optimize_android_tv/master/list_apps/rm_apps.list >/dev/null 2>&1 && clear
 		if [ -e "rm_apps.list" ]; then
 			for app_rm in $(cat rm_apps.list); do
 				fakeroot adb shell pm uninstall --user 0 $app_rm >/dev/null
@@ -283,7 +283,7 @@ ativar() {
 		# Baixar lista de apps para serem desativados
 		echo ""
 		echo -e " ${BLU}*${STD} ${NEG}Aguarde, baixando lista de apps...${STD}" && sleep 1
-		wget https://raw.githubusercontent.com/talesam/optimize_android_tv/master/list_apps/disable_apps.list >/dev/null 2>&1
+		wget https://raw.githubusercontent.com/VitorPizzuto/optimize_android_tv/master/list_apps/disable_apps.list >/dev/null 2>&1
 		if [ -e "disable_apps.list" ]; then
 			for apk_full in $(cat disable_apps.list); do
 				apk="$(echo "$apk_full" | cut -f1 -d"|")"
@@ -336,7 +336,7 @@ desativar() {
 		# Baixar lista de apps para serem desativados
 		echo ""
 		echo -e " ${BLU}*${STD} ${NEG}Aguarde, baixando lista de apps...${STD}" && sleep 1
-		wget https://raw.githubusercontent.com/talesam/optimize_android_tv/master/list_apps/disable_apps.list >/dev/null 2>&1
+		wget https://raw.githubusercontent.com/VitorPizzuto/optimize_android_tv/master/list_apps/disable_apps.list >/dev/null 2>&1
 		if [ -e "disable_apps.list" ]; then
 			for apk_full in $(cat disable_apps.list); do
 				apk="$(echo "$apk_full" | cut -f1 -d"|")"
